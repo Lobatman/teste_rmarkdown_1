@@ -1,0 +1,348 @@
+---
+title: | 
+  ![](https://i.imgur.com/SWWUQpP.png){width=500px style="display: block; margin:0 auto;"}
+  Aprendendo RMarkdown
+author: "Victor Lobato"
+date: "2023-02-14"
+output:
+  html_document:
+    highlight: haddock
+    includes:
+      in_header: "fever_icon.html"
+    theme: flatly
+    number_sections: yes
+    toc: yes
+    toc_float:
+      collapsed: yes
+      smooth_scroll: yes
+  pdf_document:
+    toc: yes
+---
+# Estruturas básicas do RMarkdown  
+Teste feito para aprender a utilizar o RMarkdown para os posteriores tutoriais do projeto.  
+Lembrete: R é uma linguagem case sensitive, portanto é preciso sempre estar atento a isso para escrever as linhas de código.  
+
+## Título
+  
+ Os títulos são definidos no RMarkdown, pela presença e quantidade de #.  
+ Com um # se define o título 1 (de maior hierarquia), com dois # é definido o título 2, e assim sucessivamente.  
+  
+`#Título 1`  
+`##Subtítulo`
+   
+Para que as linhas sejam puladas no R Markdown, é necessário que ao final da linha, seja adicionado dois espaços, e para que seja pulado uma linha em branco, deve-se colocar dois espaços ao início da linha vazia. `'  '`
+  
+  
+# Formatação do RMarkdown
+  
+* Para destacar palavras ou caracteres como `código`, é preciso coloca-los entre crases (backticks): `` `código` ``
+* Para destacar palavras ou caracteres em **negrito**, é preciso colocar a palavra entre quatro asteriscos: `**negrito**`  
+* Para destacar palavras ou caracteres em *itálico*, é preciso colocar a palara entre dois asterístcos: `*itálico*`
+* Para destacar palavras ou caractéres em ^sobrescrito^, é preciso coloca-los entre acentos circunflexos: `^1^`
+* Para destacar palavras ou caractéres em ~subscritos~, é preciso coloca-los entre acentos tilde: `~tilde~`
+* Para criar uma citação, é preciso escrever o texto após o sinal de maior: `> Citação`  
+> Citação
+
+## Adionar links, imagens e notas de rodapé no R Markdown
+  
+### Links
+  
+Para adicionar links, deve-se colocar entre `[]` o nome dado ao link seguido de um `()` com o link da página: `[Nome do link](endereço do link)`  
+
+* Exemplo: [Meu currículo Lattes](http://lattes.cnpq.br/5928398575380354)  
+  
+### Adicionar Imagens  
+  
+Para adicionar imagens no R Markdown, deve-se colocar uma exclamação `!` seguida do colchete `[]` com a legenda da imagem caso queira, seguido do parênteses `()` com o caminho para a imagem: `![Legenda](endereço da imagem)`  
+É sugerido que a figura esteja hospedada na internet.  
+  
+Provavelmente, sua imagem virá com o tamanho padrão do site que foi retirada, mas é possível alterar seu tamanho. Para alterar o tamanho, aidicone após o parênteses do link o código `{ width = n% }`, onde n% será substituido pelo tamanho desejado em porcentagem, como por exemplo: `{ width=50% }`
+
+* Exemplo:  
+![RMarkdown](https://beatrizmilz.github.io/slidesR/img/rlogos/hex-rmarkdown.png){ width=20% }
+  
+### Criar notas de rodapé  
+  
+Existem duas formas de se criar notas de rodapé:  
+  
+1. O primeiro jeito de se criar uma nota de rodapé no R Markdown, é colocando ao final do texto `[^1]` e após isso, escreva logo abaixo ou depois da frase,  a nota de rodapé:  
+"Aqui tem uma nota de rodapé `[^1]`"  
+`[^1]: Nota de rodapé.`  
+  
+Exemplo:
+
+"Esta é a definição de população de acordo com Gotelli [^1]."  
+
+[^1]: População é um grupo de indivíduos da mesma espécie, que vivem no mesmo ambiente, dependem de recursos para sobreviver, se reproduzem e interagem com outros indivíduos através de relações cológicas (GOTELLI, 2009).
+  
+2. Para colocar a informação da nota de rodapé no meio do texto, O R irá numerar automaticamente:  
+"Aqui tem uma nota de rodapé `^[Nota de rodapé]^`  
+  
+# Criação de Listas  
+  
+### Listas não ordenadas  
+Para criar uma lista não ordenada, utiliza-se o sinal de asterisco para criar um item `*`, o sinal de adição para criar um sub-item `+` e o sinal de traço para criar um sub-subitem `-`. Para cada nível da lista, deve-se dar quatro espaços antes.  
+É necessário utilizar a regra de indentação. 
+  
+**Exemplo:** 
+
+* item 1  
+  + Sub-item 1  
+  + Sub-item 2 
+    - Sub-subitem 1
+* Item 2  
+  
+### Listas ordenadas  
+Para listas ordenadas, coloca-se antes do item, número e ponto final `1.`, o subitem com "i" de forma decrescente e parênteses `i)`, e para sub-subitem coloca-se letras maíusculas, começando por "A" `A`.  
+**Exemplo:**  
+  
+1. item  
+    i) Sub-item
+    ii) sub-item 2  
+        A. Sub-subitem
+2. Item 2  
+  
+# Como adicionar equações  
+  
+No RMarkdown, as equações são escritas utilizando a linguagel **LaTeX**.  
+Assim, se deseja escrever uma equação no meio do texto, a mesma deve estar entre dois cifrões: `$equação$`, como por exemplo:  
+  
+" A fórmula matemática utilizada para calcular o crescimento logístico de populações é dada por: $\frac{dn}{dt} = rN\left ( 1 - \frac{N}{K} \right )$ "  
+  
+Para destacar a equação no meio da página, deve-se colocar a mesma dentre quatro cifrões `$$equação$$`, como por exemplo: 
+
+$$\frac{dn}{dt} = rN\left ( 1 - \frac{N}{K} \right )$$
+  
+# Incluir códigos R  
+  
+Para incluir códigos R no RMarkdown, deve-se colocar antes do código, três crases seguido de {r}, e ao final do código é preciso fecha-lo com mais três crases  ` ```{r} ``` `.  
+  
+Ao criar os códigos, observe que no canto inferior da tela (da parte que está escrevendo o RMarkdown), aparecerá a letra "C" em cor verde. Ela representa os Chunks que são os pedaços dos códigos que podem ser executados para gerar os resultados que serão apresentados no documento final do RMarkdown.  
+
+**Exemplo**
+
+``` {r, warning = FALSE, message = FALSE}
+library(dplyr)
+library(rstatix)
+```
+<br>  
+``` {r Carregamento de dados}
+data("iris")
+glimpse(iris)
+```
+<br>  
+  
+
+## Visualização de bancos de dados  
+  
+
+**Visualizar o banco de dados de forma desformatada**
+```{r visualização dos dados}
+head(iris, 10)
+```
+<br>
+**Visualizar a Tabela com as 10 primeiras entradas de forma mais estética**
+```{r}
+library(knitr)
+kable(head(iris, 10))
+```
+  
+**Visualizar a tabela com todas as entradas, separadas por páginas**
+```{r}
+library(rmarkdown)
+paged_table(iris)
+```
+  
+<br>
+
+## Como modular os "chunks"  
+  
+Caso queira editar os chunks, as fórmulas abaixo devem ser incluidas logo após o **r**: ` ```{r **incluir aqui**}``` `
+  
+* `eval = FALSE`: Deleta o resultado, mas mantém a fórmula no documento;  
+* `echo = FALSE`: Deleta a fórmula, mas não exclui o resultado no documento; 
+* `include = FALSE`: Deleta o resultado e a fórmula, mas o chunk será executado mesmo assim;  
+* `message = FALSE`: Deleta as mensagens;  
+* `warning = FALSE`: Deleta os avisos de erro, etc.  
+  
+# Como mudar a estética do documento RMarkdown  
+  
+## Adicionando dados do código no meio do texto 
+  
+É possível adicionar códigos R no meio do texto, de forma que, mesmo que o banco de dados seja atualizado, o valor no texto também será.
+<br>
+```{r}
+data("iris")
+nrow(iris)
+```
+<br>
+
+Para fazer com que o R rode o código no meio do texto, deve-se adicionar uma crase no início, seguido de r, o código e fechar com a crase:`` r nrow(dados) ``
+
+```{r}
+##Opção 1
+nrow(iris[which(iris$Species=="setosa"),])
+
+##Opção 2
+length(which(iris$Species=="setosa"))
+```
+<br>
+**Exemplo**  
+  
+O banco de dados **iris** contém `r nrow(iris)` linhas e é descrita quantidades de espécies de *setosa*, *versicolo* e *virginica*. Dentre elas,  `r length(which(iris$Species=="setosa")) ` são *setosa*.  
+  
+# Como estilizar as tabelas 
+  
+## Utilizando pacote kable_extra  
+Uma das maneiras de estilizar as tabelas para que elas fiquem com uma estética mais apresentável é com o pacote "kable_extra" e suas funções tal como a função "kable_styling".  
+  
+**Função Stripped**
+```{r, warning=FALSE, message=FALSE}
+library(kableExtra)
+kable(head(iris,10)) %>%
+  kable_styling(full_width = F, bootstrap_options = c("striped"))
+```
+Para esse modelo, em `full_width = FALSE`, irá centralizar a tabela, enquanto que `bootstrap_options = c("striped")` irá adicionar cores alternadas entre as linhas.  
+  
+**Função Striped + Hover**
+```{r}
+kable(head(iris,10)) %>%
+  kable_styling(full_width = F, bootstrap_options = c("striped", "hover"))
+``` 
+  
+Para esse modelo, foi adicionado a função "hover", ela irá destacar as linhas quando o cursor do mouse for passado por elas.  
+  
+**Função striped + hover + condensed **
+```{r}
+kable(head(iris,10)) %>%
+  kable_styling(full_width = F, bootstrap_options = c("striped", "hover", "condensed"))
+```
+  
+Para esse modelo, foi adicionado a função "condensed", que basicamente diminui o espaço entre uma coluna e outra.  
+  
+**Função striped + hover + condensed + responsive**  
+```{r}
+kable(head(iris,10)) %>%
+  kable_styling(full_width = F, bootstrap_options = c("striped", "hover", "condensed", "responsive"))
+```
+  
+Para esse modelo, foi adicionado a função "responsive", que adapta a tabela ao tamanho da página. 
+  
+*  estes são apenas algumas opções para estilizar as tabelas, existem diversas outras formas, com outros pacotes diferentes :)  
+  
+# Como criar abas para tabelas  
+  
+Para criar abas utiliza-se `{.tabset}` após o título, por exemplo `# Título {.tabset}`
+  
+# Análise descritiva (exemplo) {.tabset}  
+  
+## Média e desvio
+```{r, warning=FALSE, message=FALSE}
+library(dplyr)
+library(knitr)
+library(kableExtra)
+
+resumo <- iris %>%
+  group_by(Species) %>%
+  summarize("Comprimento Médio da Sépala" = mean(Sepal.Length), 
+            "Comprimento do Desvio Padrão da Sépala" = sd(Sepal.Length),
+            "Largura Média da Sépala" = mean(Sepal.Width),
+            "Largura do Desvio Padrão da Sépala" = sd(Sepal.Width))
+
+resumo_tabela <- head(resumo, n = 10) %>%
+  kable(caption = "Dados Iris", 
+        align = "c", format.args = list(digits = 2)) %>%
+  kable_styling(full_width = F, bootstrap_options = c("striped", "hover", "condensed", "responsive"))
+
+resumo_tabela
+#lembrrete pra mim: lembrar de aprender a fazer esse tipo de tabela e gráfico direito pq é mt difícil kkkkk
+```
+  
+## Gráfico de dispersão de grupo
+```{r, warning=FALSE, message=FALSE}
+library(ggplot2)
+
+ggplot(iris, aes(x = Sepal.Length, y = Sepal.Width, color = Species)) +
+  geom_point() +
+  labs(title = "Dispersão de Grupo Iris",
+       x = "Comprimento da Sépala", y = "Largura da Sépala",
+       color = "Espécies")
+
+```
+<br>
+  
+# Como gerar data automática no cabeçalho  
+  
+Para colocar uma data automática no cabeçalho do documento, precisa apenas inserir um código no campo de data (entre crases):  r format(Sys.time(), '%d %B, %Y .  
+
+# Como criar um sumário para o documento 
+
+O sumário fica na parte de *output* do cabeçalho e para cria-lo, é preciso escrever o segundo código:  
+  html_document  
+    toc: yes
+    toc_float:
+      collapsed: yes
+      smooth_scroll: no  
+Lembrar de indentar para dar certo. 
+
+**Como enumerar os números do cabeçalho**
+Basta adicionar `number_sections: yes`. Assim como o processo de # para títulos, esta opção vai considerar a hierarquia (título, subtitulo, sub-subtitulo).  
+  
+## Como mudar o destaque (Highlight) do código 
+  
+O destaque, seria a cor que as funções, códigos, estruturas, do código do RMarkdown aparecem, com o destaque ficará mais fácil de visualizar esteticamente. Portanto, é possível alterar o highlight de acordo com o gosto.  
+Para isso deve-se adicionar no **output** do cabeçalho `highlight: haddock`, por exemplo. Existem vários modelos de highlight e é possível visualizalos no site: eranraviv.com/syntax-highlighting-style-in-rmarkdown/ .  
+  
+## Como mudar o tema do documento  
+  
+É possível mudar o tema do documento, da mesma maneira que os anteriores, ap partir do cabeçalho na parte output `theme: flatly`. Existem vários modelos de temas disponíveis. Os temas trabalham na linguagem CSS, e inclusive, é possível mudar a estrutura deles utilizando a linguagem.  
+Site com mais opçoes de temas: datadreaming.org/post/r-markdown-theme-gallery/  
+  
+# Como colocar uma logo (imagem) no topo do documento  
+  
+Para adicionar uma imagem como logo no topo do documento, é recomendado que esta imagem seja hospedada em alguma plataforma digital. Utilizei como plataforma digital o site **imgur.com**.  
+
+## Passo a passo do código para imagem  
+
+* Copie o link da imagem;
+* Abra um bloco de notas e crie um arquivo HTML;
+* escreva o seguinte código: `<link rel="shortcut icon" href=" coloque o link aqui"> <div> <img style="position:absolute; top:10px; right:50px; padding:10px;" src="coloque o link aqui" width="110" height="110" /> </div>` 
+* No código, `style` é referente ao estilo da imagem, `position` é a posição que ele irá ficar na pagina (a ser definido);
+* `top:px` se refere a distância que a imagem irá dar do início do documento até o início da imagem;
+* `right:px` significa a quantos pixels a imagem ficará da direita do documento;
+* `padding:px` é a distância total de distância da imagem;
+* No código, perceba que `width` e `heigth` são referentes a altura e a largura da imagem. Defina de acordo com a imagem; 
+* Após feito o código, salve o bloco de notas como **.html**  
+  
+## Adicionando a logo no RMarkdown  
+  
+Para adicionar a logo, é escreva na parte **output** do cabeçalho: `includes:  in_header: "nome_do_arquivo.html"`.  
+**Lembrar** de indentar todos os códigos.
+
+## Como adicionar um Banner no topo do documento  
+ 
+Primeiro, faça o memo passo anterior e hospede a imagem em uma plataforma digital. Basicamente, mudará apenas a estrutura do código HTML  
+`<link rel="shortcut icon" href="https://i.imgur.com/SWWUQpP.png"> <div> <img style="position:relative; top:20px; left:50%; padding:10px;" src="https://i.imgur.com/SWWUQpP.png" width="510" height="150" /> </div>`  
+
+* Neste modelo, `position:` será `position:relative` fazendo com que mude a forma que a imagem interage com o texto;
+* `left` ajuda a mover a imagem;
+* Após isso, salve o documento como html;  
+* Agora basta apenas mudar o nome do arquivo na parte `in_header`.  
+  
+### Segunda opção para o Banner  
+É possível adicionar a imagem direto no cabeçalho na parte `title` (não é tão recomendado).  
+  
+
+* Coloque o caractere | na frente do title;  
+* Dê dois espaços abaixo de `title`;  
+* Adicione a imagem do jeito padrão do RMarkdown: `![](link)`  
+* Configure o tamanho da imagem como por exemplo: `{width=500px style="display: block; margin:0 auto;"}`;  
+  
+## Como criar só o fever icon  
+O fever icon é a logo que aparece antes do nome do site.  
+
+* Mais uma vez, em um bloco de notas escreva o código `<link rel="shortcut icon" href="coloque o link aqui">`;  
+* Salve em html;  
+* faça o o passo de adicionar `includes: in header: "link do html" `
+* Após isso, quando abrir o documento no navegador, aparecerá o fever icon.
+
