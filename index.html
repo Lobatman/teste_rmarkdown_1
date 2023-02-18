@@ -3080,9 +3080,7 @@ RMarkdown</h1>
 <p>Teste feito para aprender a utilizar o RMarkdown para os posteriores
 tutoriais do projeto.<br />
 Lembrete: R é uma linguagem case sensitive, portanto é preciso sempre
-estar atento a isso para escrever as linhas de código.</p>
-<div id="título" class="section level2" number="1.1">
-<h2><span class="header-section-number">1.1</span> Título</h2>
+estar atento a isso para escrever as linhas de código. ## Título</p>
 <p>Os títulos são definidos no RMarkdown, pela presença e quantidade de
 #.<br />
 Com um # se define o título 1 (de maior hierarquia), com dois # é
@@ -3093,7 +3091,6 @@ definido o título 2, e assim sucessivamente.</p>
 final da linha, seja adicionado dois espaços, e para que seja pulado uma
 linha em branco, deve-se colocar dois espaços ao início da linha vazia.
 <code>&#39;  &#39;</code></p>
-</div>
 </div>
 <div id="formatação-do-rmarkdown" class="section level1" number="2">
 <h1><span class="header-section-number">2</span> Formatação do
@@ -3115,8 +3112,8 @@ preciso coloca-los entre acentos tilde: <code>~tilde~</code></li>
 maior: <code>&gt; Citação</code><br />
 &gt; Citação</li>
 </ul>
-<div id="adionar-links-imagens-e-notas-de-rodapé-no-r-markdown" class="section level2" number="2.1">
-<h2><span class="header-section-number">2.1</span> Adionar links,
+<div id="adicionar-links-imagens-e-notas-de-rodapé-no-r-markdown" class="section level2" number="2.1">
+<h2><span class="header-section-number">2.1</span> Adicionar links,
 imagens e notas de rodapé no R Markdown</h2>
 <div id="links" class="section level3" number="2.1.1">
 <h3><span class="header-section-number">2.1.1</span> Links</h3>
@@ -3177,10 +3174,10 @@ para criar um item <code>*</code>, o sinal de adição para criar um
 sub-item <code>+</code> e o sinal de traço para criar um sub-subitem
 <code>-</code>. Para cada nível da lista, deve-se dar quatro espaços
 antes.<br />
-É necessário utilizar a regra de indentação.</p>
-<p><strong>Exemplo:</strong></p>
+É necessário utilizar a regra de indentação</p>
 <ul>
-<li>item 1
+<li><p>Exemplo:</p></li>
+<li><p>item 1</p>
 <ul>
 <li>Sub-item 1<br />
 </li>
@@ -3189,7 +3186,7 @@ antes.<br />
 <li>Sub-subitem 1</li>
 </ul></li>
 </ul></li>
-<li>Item 2</li>
+<li><p>Item 2</p></li>
 </ul>
 </div>
 <div id="listas-ordenadas" class="section level3" number="3.0.2">
@@ -3249,12 +3246,8 @@ final do RMarkdown.</p>
 ## $ Petal.Length &lt;dbl&gt; 1.4, 1.4, 1.3, 1.5, 1.4, 1.7, 1.4, 1.5, 1.4, 1.5, 1.5, 1.…
 ## $ Petal.Width  &lt;dbl&gt; 0.2, 0.2, 0.2, 0.2, 0.2, 0.4, 0.3, 0.2, 0.2, 0.1, 0.2, 0.…
 ## $ Species      &lt;fct&gt; setosa, setosa, setosa, setosa, setosa, setosa, setosa, s…</code></pre>
-<p><br></p>
-<div id="visualização-de-bancos-de-dados" class="section level2" number="5.1">
-<h2><span class="header-section-number">5.1</span> Visualização de
-bancos de dados</h2>
-<p><strong>Visualizar o banco de dados de forma
-desformatada</strong></p>
+<p><br><br />
+<strong>Visualizar o banco de dados de forma desformatada</strong></p>
 <div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(iris, <span class="dv">10</span>)</span></code></pre></div>
 <pre><code>##    Sepal.Length Sepal.Width Petal.Length Petal.Width Species
 ## 1           5.1         3.5          1.4         0.2  setosa
@@ -3268,7 +3261,7 @@ desformatada</strong></p>
 ## 9           4.4         2.9          1.4         0.2  setosa
 ## 10          4.9         3.1          1.5         0.1  setosa</code></pre>
 <p><br> <strong>Visualizar a Tabela com as 10 primeiras entradas de
-forma mais estética</strong></p>
+forma mais visual</strong></p>
 <div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(knitr)</span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="fu">kable</span>(<span class="fu">head</span>(iris, <span class="dv">10</span>))</span></code></pre></div>
 <table>
@@ -3364,10 +3357,7 @@ páginas</strong></p>
   </script>
 </div>
 <p><br></p>
-</div>
-<div id="como-modular-os-chunks" class="section level2" number="5.2">
-<h2><span class="header-section-number">5.2</span> Como modular os
-“chunks”</h2>
+<p><strong>Como modular os “chunks”</strong></p>
 <p>Caso queira editar os chunks, as fórmulas abaixo devem ser incluidas
 logo após o <strong>r</strong>:
 <code>```{r **incluir aqui**}```</code></p>
@@ -3385,13 +3375,12 @@ chunk será executado mesmo assim;<br />
 <li><code>warning = FALSE</code>: Deleta os avisos de erro, etc.</li>
 </ul>
 </div>
-</div>
 <div id="como-mudar-a-estética-do-documento-rmarkdown" class="section level1" number="6">
 <h1><span class="header-section-number">6</span> Como mudar a estética
 do documento RMarkdown</h1>
-<div id="adicionando-dados-do-código-no-meio-do-texto" class="section level2" number="6.1">
-<h2><span class="header-section-number">6.1</span> Adicionando dados do
-código no meio do texto</h2>
+<div id="adicionando-dados-do-código-no-meio-do-texto" class="section level3" number="6.0.1">
+<h3><span class="header-section-number">6.0.1</span> Adicionando dados
+do código no meio do texto</h3>
 <p>É possível adicionar códigos R no meio do texto, de forma que, mesmo
 que o banco de dados seja atualizado, o valor no texto também será.
 <br></p>
@@ -3417,9 +3406,9 @@ quantidades de espécies de <em>setosa</em>, <em>versicolo</em> e
 <div id="como-estilizar-as-tabelas" class="section level1" number="7">
 <h1><span class="header-section-number">7</span> Como estilizar as
 tabelas</h1>
-<div id="utilizando-pacote-kable_extra" class="section level2" number="7.1">
-<h2><span class="header-section-number">7.1</span> Utilizando pacote
-kable_extra</h2>
+<div id="utilizando-pacote-kable_extra" class="section level3" number="7.0.1">
+<h3><span class="header-section-number">7.0.1</span> Utilizando pacote
+kable_extra</h3>
 <p>Uma das maneiras de estilizar as tabelas para que elas fiquem com uma
 estética mais apresentável é com o pacote “kable_extra” e suas funções
 tal como a função “kable_styling”.</p>
@@ -4355,10 +4344,14 @@ format(Sys.time(), ’%d %B, %Y .</p>
 <h1><span class="header-section-number">11</span> Como criar um sumário
 para o documento</h1>
 <p>O sumário fica na parte de <em>output</em> do cabeçalho e para
-cria-lo, é preciso escrever o segundo código:<br />
-html_document<br />
-toc: yes toc_float: collapsed: yes smooth_scroll: no<br />
-Lembrar de indentar para dar certo.</p>
+cria-lo, é preciso escrever o segundo código:</p>
+<div class="sourceCode" id="cb21"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="co"># output:</span></span>
+<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a><span class="co">#   html_document:  </span></span>
+<span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a><span class="co">#     toc: yes</span></span>
+<span id="cb21-4"><a href="#cb21-4" aria-hidden="true" tabindex="-1"></a><span class="co">#     toc_float:</span></span>
+<span id="cb21-5"><a href="#cb21-5" aria-hidden="true" tabindex="-1"></a><span class="co">#       collapsed: yes</span></span>
+<span id="cb21-6"><a href="#cb21-6" aria-hidden="true" tabindex="-1"></a><span class="co">#       smooth_scroll: no  </span></span></code></pre></div>
+<p>Lembrar de indentar para dar certo.</p>
 <p><strong>Como enumerar os números do cabeçalho</strong> Basta
 adicionar <code>number_sections: yes</code>. Assim como o processo de #
 para títulos, esta opção vai considerar a hierarquia (título, subtitulo,
@@ -4399,8 +4392,15 @@ código para imagem</h2>
 <ul>
 <li>Copie o link da imagem;</li>
 <li>Abra um bloco de notas e crie um arquivo HTML;</li>
-<li>escreva o seguinte código:
-<code>&lt;link rel=&quot;shortcut icon&quot; href=&quot; coloque o link aqui&quot;&gt; &lt;div&gt; &lt;img style=&quot;position:absolute; top:10px; right:50px; padding:10px;&quot; src=&quot;coloque o link aqui&quot; width=&quot;110&quot; height=&quot;110&quot; /&gt; &lt;/div&gt;</code></li>
+<li>escreva o seguinte código:</li>
+</ul>
+<div class="sourceCode" id="cb22"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="co"># &lt;link rel=&quot;shortcut icon&quot; href=&quot;https://i.imgur.com/ccVrjxG.png&quot;&gt;</span></span>
+<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a><span class="co"># </span></span>
+<span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a><span class="co"># &lt;div&gt;</span></span>
+<span id="cb22-4"><a href="#cb22-4" aria-hidden="true" tabindex="-1"></a><span class="co">#   &lt;img style=&quot;position:absolute; top:10px; right:50px; padding:10px;&quot;</span></span>
+<span id="cb22-5"><a href="#cb22-5" aria-hidden="true" tabindex="-1"></a><span class="co">#   src=&quot;https://i.imgur.com/ccVrjxG.png&quot; width=&quot;110&quot; height=&quot;110&quot; /&gt;</span></span>
+<span id="cb22-6"><a href="#cb22-6" aria-hidden="true" tabindex="-1"></a><span class="co"># &lt;/div&gt;</span></span></code></pre></div>
+<ul>
 <li>No código, <code>style</code> é referente ao estilo da imagem,
 <code>position</code> é a posição que ele irá ficar na pagina (a ser
 definido);</li>
@@ -4421,17 +4421,25 @@ imagem;</li>
 <h2><span class="header-section-number">12.2</span> Adicionando a logo
 no RMarkdown</h2>
 <p>Para adicionar a logo, é escreva na parte <strong>output</strong> do
-cabeçalho:
-<code>includes:  in_header: &quot;nome_do_arquivo.html&quot;</code>.<br />
-<strong>Lembrar</strong> de indentar todos os códigos.</p>
+cabeçalho:</p>
+<div class="sourceCode" id="cb23"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="co"># includes:</span></span>
+<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a><span class="co">#       in_header: &quot;fever_icon.html&quot;</span></span></code></pre></div>
+<p><strong>Lembrar</strong> de indentar todos os códigos.</p>
 </div>
 <div id="como-adicionar-um-banner-no-topo-do-documento" class="section level2" number="12.3">
 <h2><span class="header-section-number">12.3</span> Como adicionar um
 Banner no topo do documento</h2>
 <p>Primeiro, faça o memo passo anterior e hospede a imagem em uma
 plataforma digital. Basicamente, mudará apenas a estrutura do código
-HTML<br />
-<code>&lt;link rel=&quot;shortcut icon&quot; href=&quot;https://i.imgur.com/SWWUQpP.png&quot;&gt; &lt;div&gt; &lt;img style=&quot;position:relative; top:20px; left:50%; padding:10px;&quot; src=&quot;https://i.imgur.com/SWWUQpP.png&quot; width=&quot;510&quot; height=&quot;150&quot; /&gt; &lt;/div&gt;</code></p>
+HTML:</p>
+<div class="sourceCode" id="cb24"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="co">#  &lt;link rel=&quot;shortcut icon&quot; href=&quot;https://i.imgur.com/SWWUQpP.png&quot;&gt;</span></span>
+<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a><span class="co"># </span></span>
+<span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a><span class="co"># &lt;div&gt;</span></span>
+<span id="cb24-4"><a href="#cb24-4" aria-hidden="true" tabindex="-1"></a><span class="co"># </span></span>
+<span id="cb24-5"><a href="#cb24-5" aria-hidden="true" tabindex="-1"></a><span class="co">#   &lt;img style=&quot;position:relative; top:20px; left:50%; padding:10px;&quot;</span></span>
+<span id="cb24-6"><a href="#cb24-6" aria-hidden="true" tabindex="-1"></a><span class="co">#    src=&quot;https://i.imgur.com/SWWUQpP.png&quot; width=&quot;510&quot; height=&quot;150&quot; /&gt;</span></span>
+<span id="cb24-7"><a href="#cb24-7" aria-hidden="true" tabindex="-1"></a><span class="co"># </span></span>
+<span id="cb24-8"><a href="#cb24-8" aria-hidden="true" tabindex="-1"></a><span class="co"># &lt;/div&gt;</span></span></code></pre></div>
 <ul>
 <li>Neste modelo, <code>position:</code> será
 <code>position:relative</code> fazendo com que mude a forma que a imagem
@@ -4458,6 +4466,8 @@ o Banner</h3>
 <li>Configure o tamanho da imagem como por exemplo:
 <code>{width=500px style=&quot;display: block; margin:0 auto;&quot;}</code>;</li>
 </ul>
+<div class="sourceCode" id="cb25"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="co"># title: | </span></span>
+<span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a><span class="co">#   ![](https://i.imgur.com/SWWUQpP.png){width=500px style=&quot;display: block; margin:0 auto;&quot;}</span></span></code></pre></div>
 </div>
 </div>
 <div id="como-criar-só-o-fever-icon" class="section level2" number="12.4">
@@ -4465,9 +4475,10 @@ o Banner</h3>
 fever icon</h2>
 <p>O fever icon é a logo que aparece antes do nome do site.</p>
 <ul>
-<li>Mais uma vez, em um bloco de notas escreva o código
-<code>&lt;link rel=&quot;shortcut icon&quot; href=&quot;coloque o link aqui&quot;&gt;</code>;<br />
-</li>
+<li>Mais uma vez, em um bloco de notas escreva o código ;</li>
+</ul>
+<div class="sourceCode" id="cb26"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="co"># &lt;link rel=&quot;shortcut icon&quot; href=&quot;https://i.imgur.com/ZXZIkuE.png&quot;&gt;</span></span></code></pre></div>
+<ul>
 <li>Salve em html;<br />
 </li>
 <li>faça o o passo de adicionar
