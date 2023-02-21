@@ -18,6 +18,7 @@ output:
   pdf_document:
     toc: yes
 ---
+<div class="text-justify"> 
 # Estruturas básicas do RMarkdown  
 Teste feito para aprender a utilizar o RMarkdown para os posteriores tutoriais do projeto.  
 Lembrete: R é uma linguagem case sensitive, portanto é preciso sempre estar atento a isso para escrever as linhas de código. 
@@ -380,4 +381,4 @@ O fever icon é a logo que aparece antes do nome do site.
 * Salve em html;  
 * faça o o passo de adicionar `includes: in header: "link do html" `
 * Após isso, quando abrir o documento no navegador, aparecerá o fever icon.
-
+</div>
